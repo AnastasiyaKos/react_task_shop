@@ -1,0 +1,13 @@
+.productListWrap {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.productName {
+
+}
+
+.deleteProduct,
+.productInfo{
+    background-color: gray;
+}
