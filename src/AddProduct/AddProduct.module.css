@@ -1,11 +1,44 @@
 .addProductWrap {
-    width: 500px;
+    width: 550px;
     margin: 0 auto;
 
 }
 
-.productInput {
-
+.addProductInput {
+    /*display: flex;*/
+    width: 750px;
 }
 
-.addProduct {}
+.productInput {
+    width: 550px;
+    height: 35px;
+    margin-bottom: 15px;
+    padding: 0 5px;
+    box-sizing: inherit;
+
+    background-color: #282c34;
+    border: none;
+}
+
+.productImageWrap {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+
+    background-color: #282c34;
+    border-radius: 50px;
+}
+
+.productImage {
+    padding: 15px  0 0 16px;
+}
+
+.addProduct {
+    width: 100px;
+    height: 35px;
+    margin: 0 auto;
+    color: white;
+
+    background-color: #282c34;
+    border: none;
+}

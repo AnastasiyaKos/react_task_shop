@@ -1,0 +1,22 @@
+.counterButton {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 35px;
+    height: 35px;
+    margin: 0 15px;
+
+    color: white;
+    background-color: #1c2126;
+    border: none;
+    cursor: pointer;
+
+}
+
+.counterNumber {
+    color: white;
+    font-size: 20px;
+}
+

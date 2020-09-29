@@ -6,9 +6,9 @@ import ProductItem from "./ProductItem/ProductItem";
 
 function App() {
   return (
-      <div>
+      <div className='pageWrap'>
         <AddProduct />
-        <ProductItem/>
+        <ProductList/>
       </div>
   );
 }
