@@ -11,19 +11,21 @@ const ProductList = (props) => {
     return (
         <div className={s.productListWrap}>
             <h2>Product list</h2>
-            <div>
-                <Image src={basket} width='50' hieght='50' roundedCircle />
-                <div>
+            <div className={s.infoWrap}>
+                <div className={s.productImageWrap}>
+                    <img src={basket} className={s.productImage} width='45' height='45'  />
+                </div>
+                <div className={s.infoProductWrap}>
                     <span className={s.productName}>buy apples</span>
                     <Counter />
                     <span>Total: 10 $</span>
                 </div>
-                <div>
+                <div className={s.buttonWrap}>
                     <button className={s.deleteProduct} onClick={console.log()}>
-                        <img src={deleteIcon} width='15' height='15'/>
+                        <img src={deleteIcon} width='20' height='20'/>
                     </button>
                     <button className={s.productInfo} onClick={console.log()}>
-                        <img src={infoIcon} width='15' height='15'/>
+                        <img src={infoIcon} width='20' height='20'/>
                     </button>
                 </div>
             </div>

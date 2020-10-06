@@ -1,12 +1,15 @@
 .addProductWrap {
-    width: 550px;
+    max-width: 550px;
     margin: 0 auto;
 
 }
 
+h2 {
+    text-align: center;
+}
+
 .addProductInput {
-    /*display: flex;*/
-    width: 750px;
+    width: 550px;
 }
 
 .productInput {
@@ -16,29 +19,45 @@
     padding: 0 5px;
     box-sizing: inherit;
 
-    background-color: #282c34;
+    background-color: #3d4e56;
     border: none;
 }
 
-.productImageWrap {
-    width: 80px;
-    height: 80px;
+.counterWrap {
+    width: 550px;
     margin: 0 auto;
+}
 
-    background-color: #282c34;
+.productImageWrap {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
+
+    background-color: #3d4e56;
     border-radius: 50px;
 }
 
 .productImage {
-    padding: 15px  0 0 16px;
+
+    transform: translate(35%, 35%);
+}
+
+.productListImage {
+    width: 250px;
+    height: 60px;
+    margin: 0 auto;
+
+    background-color: #3d4e56;
 }
 
 .addProduct {
+    display: block;
     width: 100px;
     height: 35px;
     margin: 0 auto;
     color: white;
 
-    background-color: #282c34;
+    background-color: #373b43;
     border: none;
 }

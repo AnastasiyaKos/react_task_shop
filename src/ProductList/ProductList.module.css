@@ -1,14 +1,49 @@
+* {
+    color: white;
+}
+
 .productListWrap {
-    width: 815px;
+    width: 550px;
 }
 
 .productName {
-    width: 815px;
+    width: 550px;
+}
+
+.infoWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*height: 90px;*/
+
+    background-color: #3d4e56;
 }
 
 
 
+
+.productImageWrap {
+    margin-left: 20px;
+    margin-right: 70px;
+}
+
+.buttonWrap {
+    margin-bottom: 60px;
+}
+
 .deleteProduct,
 .productInfo {
-    background-color: gray;
+    width: 35px;
+    height: 35px;
+    align-self: flex-start;
+    background-color: #1c2126;
+    border: none;
+}
+
+.deleteProduct:hover {
+    background-color: red;
+}
+
+.productInfo:hover {
+    background-color: cornflowerblue;
 }
