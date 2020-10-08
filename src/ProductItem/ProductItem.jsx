@@ -1,7 +1,10 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
 import s from './ProductItem.module.css';
-import basket from './img/basket.svg';
+import basket from './img/shopping-basket.svg';
+import apple from './img/apple.svg';
+import carrot from './img/carrot.svg';
+import fish from './img/fish.svg';
+import iceCream from './img/ice-cream.svg';
 
 
 
@@ -9,16 +12,18 @@ const ProductItem = (props) => {
     return (
         <div className={s.productItemWrap}>
             <div>
-                <span>Bue apples</span>
-                <Image src={basket} width='50' hieght='50' roundedCircle />
+                <h2>buy apples</h2>
+                <div className={s.productImage}>
+                    <img src={apple} width='100' height='100' alt='product' />
+                </div>
                 <div>
-                    <span>Count: 10</span>
-                    <span>Price: 1 $</span>
-                    <span>Total: 10 $</span>
+                    <p>Count: 10</p>
+                    <p>Price: 1 $</p>
+                    <p>Total: 10 $</p>
                 </div>
             </div>
-            <div>
-                <button onClick={console.log()}>Back to list</button>
+            <div className={s.btnBackWrap}>
+                <a onClick={console.log()} className={s.btnBack}>Back to list</a>
             </div>
         </div>
     )

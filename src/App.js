@@ -8,7 +8,8 @@ function App() {
   return (
       <div className='pageWrap'>
         <AddProduct />
-        <ProductList/>
+        <ProductList />
+        {/*<ProductItem />*/}
       </div>
   );
 }

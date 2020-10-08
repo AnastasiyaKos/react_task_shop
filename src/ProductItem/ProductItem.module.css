@@ -1,7 +1,27 @@
-.productListWrap {
-    width: 815px;
+.productItemWrap {
+    width: 550px;
 }
 
-.productName {
+.productImage {
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 
+p {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.btnBackWrap {
+    width: 120px;
+    padding: 5px 0 5px 23px;
+    margin: 0 auto;
+
+    background-color: #3d4e56;
+}
+
+.btnBack {
+    cursor: pointer;
+    text-decoration: underline;
 }

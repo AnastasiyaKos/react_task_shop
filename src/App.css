@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+button:focus {
+  border: none;
+}
+
 .App {
   text-align: center;
 }
@@ -14,10 +18,7 @@
 .pageWrap {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 60px;
-
-
+  margin: 60px auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

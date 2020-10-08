@@ -2,7 +2,7 @@ import React from 'react';
 import Counter from './../AddProduct/Counter/Counter';
 import { Image } from 'react-bootstrap';
 import s from './ProductList.module.css';
-import basket from './img/basket.svg';
+import basket from './img/shopping-basket.svg';
 import deleteIcon from './img/delete.svg';
 import infoIcon from './img/info.svg';
 
@@ -16,9 +16,9 @@ const ProductList = (props) => {
                     <img src={basket} className={s.productImage} width='45' height='45'  />
                 </div>
                 <div className={s.infoProductWrap}>
-                    <span className={s.productName}>buy apples</span>
+                    <span className={s.productName}>Buy apples</span>
                     <Counter />
-                    <span>Total: 10 $</span>
+                    <span className={s.total}>Total: 10 $</span>
                 </div>
                 <div className={s.buttonWrap}>
                     <button className={s.deleteProduct} onClick={console.log()}>
@@ -29,7 +29,7 @@ const ProductList = (props) => {
                     </button>
                 </div>
             </div>
-            <span>Total: 17 $</span>
+            <p className={s.allProductsTotal}>Total: 17 $</p>
         </div>
     )
 };

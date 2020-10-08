@@ -1,6 +1,11 @@
+button:focus{
+    outline: none !important;
+    outline-offset: none !important;
+}
+
 .counterButton {
-    width: 101px;
-    margin: 0 auto;
+    width: 110px;
+    margin: 15px auto;
 }
 
 .btn {
