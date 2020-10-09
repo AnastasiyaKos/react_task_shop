@@ -1,6 +1,8 @@
 import React from 'react';
 import Counter from './../AddProduct/Counter/Counter';
+import {NavLink} from "react-router-dom";
 import { Image } from 'react-bootstrap';
+
 import s from './ProductList.module.css';
 import basket from './img/shopping-basket.svg';
 import deleteIcon from './img/delete.svg';
@@ -24,9 +26,11 @@ const ProductList = (props) => {
                     <button className={s.deleteProduct} onClick={console.log()}>
                         <img src={deleteIcon} width='20' height='20'/>
                     </button>
-                    <button className={s.productInfo} onClick={console.log()}>
-                        <img src={infoIcon} width='20' height='20'/>
-                    </button>
+                    <NavLink to={'/ProductItem'}>
+                        <button className={s.productInfo} onClick={console.log()}>
+                            <img src={infoIcon} width='20' height='20'/>
+                        </button>
+                    </NavLink>
                 </div>
             </div>
             <p className={s.allProductsTotal}>Total: 17 $</p>
