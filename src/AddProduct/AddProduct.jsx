@@ -1,9 +1,14 @@
 import React from 'react';
-import Counter from './Counter/Counter';
+import Counter from './Counter/Counter2';
 import s from './AddProduct.module.css';
 import basket from './img/shopping-basket.svg';
 import Products from "../Products/Products";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+import counterReducer from "../redux/counterReducer";
 
+
+const store = createStore(counterReducer);
 
 class AddProduct extends React.Component {
     constructor(props) {
@@ -26,7 +31,9 @@ class AddProduct extends React.Component {
                     <input className={s.productInput} placeholder='Product price'/>
                 </div>
                 <div className={s.counterWrap}>
-                    <Counter/>
+                    <Provider store={store}>
+                        <Counter/>
+                    </Provider>
                 </div>
                 <div className={s.productImageWrap} onClick={this.setEditProduct}>
                     <img src={basket} className={s.productImage} width='35' height='35' alt='basket'/>
