@@ -1,15 +1,11 @@
 import React from 'react';
-import s from './ProductItem.module.css';
-import basket from './img/shopping-basket.svg';
-import apple from './img/apple.svg';
-import carrot from './img/carrot.svg';
-import fish from './img/fish.svg';
-import iceCream from './img/ice-cream.svg';
 import {NavLink} from "react-router-dom";
 
+import s from './ProductInfo.module.css';
+import apple from './img/apple.svg';
 
 
-const ProductItem = (props) => {
+const ProductInfo = (props) => {
     return (
         <div className={s.productItemWrap}>
             <div>
@@ -32,4 +28,4 @@ const ProductItem = (props) => {
     )
 };
 
-export default ProductItem;
+export default ProductInfo;

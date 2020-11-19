@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './../AddProduct/AddProduct.module.css';
+import s from '../AddProduct/AddProduct.module.css';
 import apple from './img/apple.svg';
 import carrot from './img/carrot.svg';
 import fish from './img/fish.svg';

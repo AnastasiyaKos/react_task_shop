@@ -1,0 +1,67 @@
+* {
+    color: white;
+}
+
+.productListWrap {
+    width: 550px;
+}
+
+.productName,
+.total {
+    display: block;
+    text-align: center;
+}
+
+.total {
+    opacity: 0.5;
+}
+
+.infoWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1px;
+
+    background-color: #3d4e56;
+}
+
+.infoWrap:hover {
+    background-color: #585977;
+}
+
+.infoProductWrap {
+    margin: 10px 0;
+}
+
+
+.productImageWrap {
+    margin-left: 10px;
+    margin-right: 70px;
+}
+
+.buttonWrap {
+    margin-bottom: 92px;
+}
+
+.deleteProduct,
+.productInfo {
+    width: 35px;
+    height: 35px;
+    align-self: flex-start;
+    background-color: #1c2126;
+    border: none;
+}
+
+.deleteProduct:hover {
+    background-color: red;
+}
+
+.productInfo:hover {
+    background-color: cornflowerblue;
+}
+
+.allProductsTotal {
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: start;
+}

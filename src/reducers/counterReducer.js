@@ -1,12 +1,8 @@
 const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 
-const initialState = {
-    count: 0,
-    payload: 'abc'
-}
 
-const counterReducer = (state = initialState, action) => {
+const counterReducer = (state = 0, action) => {
     switch (action.type) {
         case INCREASE:
             return { ...state, count: state.count + 1};
