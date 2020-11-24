@@ -1,30 +1,19 @@
 import s from "./Counter.module.css";
-import React, {useState} from "react";
-import {decreaseProductCount, increaseProductCount} from "../../reducers/counterReducer";
+import React from "react";
 import {connect} from 'react-redux';
 
 
-const Counter = ({count, increaseProductCount, decreaseProductCount}) => {
-    const [countItem, setCount] = useState(count || 0);
-
+const Counter = ({count, onCountChange}) => {
     return (
         <div className={s.counterButton}>
             <button className={s.btn}
-                    onClick={decreaseProductCount}
+                    onClick={() => onCountChange(count - 1)}
                     disabled={count <= 0}>-</button>
-            <span className={s.counterNumber}>{count}</span>
+            <span className={ s.counterNumber }>{count}</span>
             <button className={s.btn}
-                    onClick={increaseProductCount}>+</button>
+                    onClick={() => onCountChange(count + 1)}>+</button>
         </div>
     );
 };
 
-
-const mapStateToProps = (state) => {
-    return {
-        counter: state.count
-    }
-}
-
-
-export default connect(mapStateToProps, {increaseProductCount, decreaseProductCount})(Counter);
+export default connect()(Counter);

@@ -1,21 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import {NavLink} from "react-router-dom";
+import React from 'react';
 
 import Counter from '../../Counter/Counter';
 
 import s from './ProductItem.module.css';
-import basket from '../img/shopping-basket.svg';
 import deleteIcon from '../img/delete.svg';
 import infoIcon from '../img/info.svg';
-import {forEach} from "react-bootstrap/ElementChildren";
 
 
-const ProductItem = ({product}) => {
+const ProductItem = ({product, onProductInfo}) => {
 
     return (
         <div className={s.infoWrap}>
             <div className={s.productImageWrap}>
-                <img src={basket} className={s.productImage} width='45' height='45'/>
+                <img src={product.icon} className={s.productImage} width='45' height='45'/>
             </div>
             <div className={s.infoProductWrap}>
                 <span className={s.productName}>{product.label}</span>
@@ -26,11 +23,9 @@ const ProductItem = ({product}) => {
                 <button className={s.deleteProduct} onClick={console.log()}>
                     <img src={deleteIcon} width='20' height='20'/>
                 </button>
-                <NavLink to={'/ProductInfo'}>
-                    <button className={s.productInfo}>
-                        <img src={infoIcon} width='20' height='20'/>
-                    </button>
-                </NavLink>
+                <button className={s.productInfo} onClick={onProductInfo}>
+                    <img src={infoIcon} width='20' height='20'/>
+                </button>
             </div>
         </div>
     )

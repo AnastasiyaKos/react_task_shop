@@ -5,7 +5,10 @@ import s from './ProductInfo.module.css';
 import apple from './img/apple.svg';
 
 
-const ProductInfo = (props) => {
+const ProductInfo = ({onDisableInfo, product}) => {
+
+
+
     return (
         <div className={s.productItemWrap}>
             <div>
@@ -20,9 +23,7 @@ const ProductInfo = (props) => {
                 </div>
             </div>
             <div className={s.btnBackWrap}>
-                <NavLink to={'/ProductList'}>
-                    <a onClick={console.log()} className={s.btnBack}>Back to list</a>
-                </NavLink>
+                <a onClick={onDisableInfo} className={s.btnBack}>Back to list</a>
             </div>
         </div>
     )
