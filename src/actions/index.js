@@ -1,7 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import {ADD_PRODUCT, REMOVE_PRODUCT} from "../reducers";
+import {ADD_PRODUCT, ON_DATA_SUCCESS, REMOVE_PRODUCT} from "../reducers";
 
+
+export const onDataSuccess = data => ({
+    type: ON_DATA_SUCCESS,
+    data: data
+})
 
 export const addProductAction = product => ({
     type: ADD_PRODUCT,

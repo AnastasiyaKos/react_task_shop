@@ -5,6 +5,8 @@ import Counter from '../../Counter/Counter';
 import s from './ProductItem.module.css';
 import deleteIcon from '../img/delete.svg';
 import infoIcon from '../img/info.svg';
+import {connect} from "react-redux";
+import Icon from "../../Icon/Icon";
 
 
 const ProductItem = ({product, onProductInfo}) => {
@@ -31,4 +33,4 @@ const ProductItem = ({product, onProductInfo}) => {
     )
 }
 
-export default ProductItem;
+export default connect()(ProductItem);

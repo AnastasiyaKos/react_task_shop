@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 
 import Counter from '../Counter/Counter';
 import s from './AddProduct.module.css';
-import basket from './img/shopping-basket.svg';
 import IconSelect from "../IconSelect/IconSelect";
 import {addProductAction} from "../../actions";
 import {Icons as icons} from './../Icon/Icons';
@@ -38,7 +37,6 @@ const AddProduct = ({dispatch}) => {
 
     const addProduct = () => {
         dispatch(addProductAction(product));
-        console.log(product);
         setProduct(newProduct);
 
     };

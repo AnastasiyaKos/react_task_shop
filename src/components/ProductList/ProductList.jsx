@@ -5,35 +5,19 @@ import ProductInfo from "./ProductInfo/ProductInfo";
 import s from './ProductList.module.css';
 import axios from "axios";
 import {connect} from "react-redux";
-import {Icons as icons} from "../Icon/Icons";
-import { v4 as uuidv4 } from 'uuid';
+import {onDataSuccess} from "../../actions";
 
-const ProductList = ({}) => {
+const ProductList = ({products, dispatch}) => {
 
-    const [state, setState] = useState();
     const [showProductInfo, setShowProductInfo] = useState(false);
 
     useEffect(() => {
             axios.get('http://demo8845970.mockable.io/tupayaDevka')
                 .then(({data}) => {
-
-                    setState(data.map((item) => {
-                        return {
-                            ...item,
-                            icon: icons[item.iconIndex],
-                            id: uuidv4()
-                        }
-                    }));
+                    dispatch(onDataSuccess(data))
                 })
         }, []
     )
-
-
-    const productList = () => {
-        return state.map((item) => {
-            return  <ProductItem product={item} onProductInfo={onShowProductInfo}/>
-        })
-    }
 
     const onShowProductInfo = () => {
         setShowProductInfo(true);
@@ -47,16 +31,21 @@ const ProductList = ({}) => {
         !showProductInfo ? (
             <div className={s.productListWrap}>
                 <h2>Product list</h2>
-                {!state ? ('') : state.length === 0 ? ('') : <div>{productList()}</div> }
+                {products.map((item) => <ProductItem product={item} onProductInfo={onShowProductInfo}/>
+                )}
                 <p className={s.allProductsTotal}>Total: {} $</p>
             </div>
         ) : (
             <div>
-                <ProductInfo onDisableInfo={onDisableProductInfo} product={state}/>
+                <ProductInfo onDisableInfo={onDisableProductInfo} product={products}/>
             </div>
 
         )
     )
 };
 
-export default connect()(ProductList);
+const mapStateToProps = state => ({
+    products: state.products
+})
+
+export default connect(mapStateToProps)(ProductList);
