@@ -11,6 +11,7 @@ const IconSelect = ({defaultIcon, onChange}) => {
     const [icon, setIcon] = useState(defaultIcon);
 
     const changeIcon = newIcon => {
+        console.log(newIcon)
         setIcon(newIcon);
         onChange(newIcon);
         setEditProduct();

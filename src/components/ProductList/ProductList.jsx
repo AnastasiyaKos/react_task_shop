@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import ProductItem from './ProductItem/ProductItem'
-import ProductInfo from "./ProductInfo/ProductInfo";
-
-import s from './ProductList.module.css';
+import ProductItem from '../ProductItem/ProductItem';
 import axios from "axios";
 import {connect} from "react-redux";
+
+import s from './ProductList.module.css';
 import {onDataSuccess} from "../../actions";
+
 
 const ProductList = ({products, dispatch}) => {
 
-    const [showProductInfo, setShowProductInfo] = useState(false);
+
 
     useEffect(() => {
             axios.get('http://demo8845970.mockable.io/tupayaDevka')
@@ -17,31 +17,17 @@ const ProductList = ({products, dispatch}) => {
                     dispatch(onDataSuccess(data))
                 })
         }, []
-    )
+    );
 
-    const onShowProductInfo = () => {
-        setShowProductInfo(true);
+    const getTotalPrice = () => {
+        return products.reduce((accumulator, product) => accumulator + product.price * product.count, 0)
     }
 
-    const onDisableProductInfo = () => {
-        setShowProductInfo(false);
-    }
-
-    return (
-        !showProductInfo ? (
-            <div className={s.productListWrap}>
-                <h2>Product list</h2>
-                {products.map((item) => <ProductItem product={item} onProductInfo={onShowProductInfo}/>
-                )}
-                <p className={s.allProductsTotal}>Total: {} $</p>
-            </div>
-        ) : (
-            <div>
-                <ProductInfo onDisableInfo={onDisableProductInfo} product={products}/>
-            </div>
-
-        )
-    )
+    return <div className={s.productListWrap}>
+        <h2>Product list</h2>
+        {products.map((item) => <ProductItem key={item.id} product={item}/>)}
+        <p className={s.allProductsTotal}>Total: {getTotalPrice()} $</p>
+    </div>
 };
 
 const mapStateToProps = state => ({

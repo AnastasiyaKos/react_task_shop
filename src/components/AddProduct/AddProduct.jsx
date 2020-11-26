@@ -8,13 +8,15 @@ import IconSelect from "../IconSelect/IconSelect";
 import {addProductAction} from "../../actions";
 import {Icons as icons} from './../Icon/Icons';
 
+const BASKET_ICON = icons[0];
+
 const AddProduct = ({dispatch}) => {
 
     const newProduct = {
         label: '',
         price: 0,
         count: 1,
-        icon: icons[0],
+        icon: null,
     };
 
     const [product, setProduct] = useState(newProduct);
@@ -29,11 +31,11 @@ const AddProduct = ({dispatch}) => {
         count: count
     });
 
-    const onIconChange = icon => setProduct({
+    const onIconChange = icon => {
+        setProduct({
         ...product,
         icon: icon
-    });
-
+    })};
 
     const addProduct = () => {
         dispatch(addProductAction(product));
@@ -54,7 +56,7 @@ const AddProduct = ({dispatch}) => {
             <div className={s.counterWrap}>
                 <Counter onCountChange={onCountChange} count={product.count} />
             </div>
-            <IconSelect defaultIcon={product.icon} onChange={() => onIconChange()}/>
+            <IconSelect defaultIcon={BASKET_ICON} onChange={(icon) => onIconChange(icon)}/>
             <button className={s.addProduct} onClick={() => addProduct()}>
                 Add to list
             </button>

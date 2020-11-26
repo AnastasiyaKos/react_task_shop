@@ -6,20 +6,22 @@ import { v4 as uuidv4 } from 'uuid';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const ON_DATA_SUCCESS = 'ON_DATA_SUCCESS';
+export const EDIT_PRODUCT_COUNT = 'EDIT_PRODUCT_COUNT';
 
 
 const products = (state = [], action) => {
     switch (action.type) {
         case ON_DATA_SUCCESS:
             return action.data.map(item => {
-                console.log(icons[0])
                 return {
                 ...item,
                 id: uuidv4(),
-                icon: icons.map(i => item[icons[i]])
+                icon: icons[item.iconIndex],
+                total: item.count * item.price
             }});
 
-        case ADD_PRODUCT: {
+        case ADD_PRODUCT:
+            console.log(action)
             return [
                 ...state,
                 {
@@ -27,9 +29,22 @@ const products = (state = [], action) => {
                     label: action.label,
                     price: action.price,
                     count: action.count,
-                    icon: action.icon
+                    icon: action.icon,
+                    total: action.count * action.price
                 }
-            ]}
+            ];
+
+        case EDIT_PRODUCT_COUNT:
+            return state.map(product => {
+                if (product.id === action.id) {
+                    return {
+                        ...product,
+                        count: action.count,
+                        total: action.count * product.price
+                    }
+                }
+                return product;
+            });
 
         case REMOVE_PRODUCT:
             return state.filter(product => product.id !== action.id);
