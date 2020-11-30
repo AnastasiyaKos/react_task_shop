@@ -7,19 +7,18 @@ import deleteIcon from '../ProductList/img/delete.svg';
 import infoIcon from '../ProductList/img/info.svg';
 import Icon from "../Icon/Icon";
 import s from './ProductItem.module.css';
-import {editProductCount, removeProductAction} from "../../actions";
+import {editProductCountAction, removeProductAction} from "../../actions";
 
 
 const ProductItem = ({product, onProductInfo, dispatch}) => {
 
     const onCountChange = count => {
-        dispatch(editProductCount({id:product.id, count}));
+        dispatch(editProductCountAction({id:product.id, count}));
     }
 
     const removeProduct = () => {
         dispatch(removeProductAction(product.id));
     }
-
 
 
     return (

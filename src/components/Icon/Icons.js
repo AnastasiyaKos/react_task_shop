@@ -4,4 +4,7 @@ import fish from './img/fish.svg';
 import iceCream from './img/ice-cream.svg';
 import basket from './img/shopping-basket.svg';
 
-export const Icons = [basket, apple, carrot, fish, iceCream];
+
+export const defaultIcon = basket;
+
+export const Icons = [carrot, apple, iceCream, fish];

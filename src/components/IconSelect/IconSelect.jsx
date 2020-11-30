@@ -11,7 +11,6 @@ const IconSelect = ({defaultIcon, onChange}) => {
     const [icon, setIcon] = useState(defaultIcon);
 
     const changeIcon = newIcon => {
-        console.log(newIcon)
         setIcon(newIcon);
         onChange(newIcon);
         setEditProduct();
@@ -22,23 +21,13 @@ const IconSelect = ({defaultIcon, onChange}) => {
             <div className={s.productImageWrap} onClick={setEditProduct}>
                 <Icon icon={icon} className={s.productImage} />
             </div>
-            {isEditMode && <div className={s.productListImage}>
-                <div className={s.productItemWrap} onClick={() => changeIcon(icons[1])}>
-                    <Icon icon={icons[1]} className={s.productImageItem}/>
-                </div>
-
-                <div className={s.productItemWrap} onClick={() => changeIcon(icons[2])}>
-                    <Icon icon={icons[2]} className={s.productImageItem}/>
-                </div>
-
-                <div className={s.productItemWrap} onClick={() => changeIcon(icons[3])}>
-                    <Icon icon={icons[3]} className={s.productImageItem}/>
-                </div>
-
-                <div className={s.productItemWrap} onClick={() => changeIcon(icons[4])}>
-                    <Icon icon={icons[4]} className={s.productImageItem}/>
-                </div>
-            </div>}
+            { isEditMode && <div className={s.productListImage}>
+                { icons.map(item => {
+                    return <div className={s.productItemWrap} onClick={() => changeIcon(item)}>
+                        <Icon icon={item} className={s.productImageItem}/>
+                    </div>})
+                }
+            </div> }
         </div>
     )
 };

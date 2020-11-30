@@ -1,7 +1,7 @@
-// import axios from 'axios';
-//
-// export const getAllProduct = async () => {
-//     return axios.get('http://demo8936049.mockable.io/hui2020')
-// }
-//
-//
+import axios from 'axios';
+
+export const getAllProduct = () => {
+    return axios.get('http://demo8845970.mockable.io/tupayaDevka')
+}
+
+
